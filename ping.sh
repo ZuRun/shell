@@ -15,7 +15,7 @@ for((i=0;i<864000;i++))
     datetime=`date +%Y-%m-%d,%H:%M:%S`
     #sum=$(echo "$tmp+$sum"|bc)
     if [ $tmp>$maxTime ]; then
-    	echo "seq: $i  time: $tmp  $datetime"
-	fi
-	sleep 1s
+        echo "seq: $i  time: $tmp  $datetime"
+    fi
+    sleep 1s
 }
