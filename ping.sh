@@ -14,7 +14,7 @@ for((i=0;i<864000;i++))
 {
     tmp=$(ping $addr -c 1 | sed -n 's/.* = .*\/\(.*\)\/.*/\1/p')
     datetime=`date +%Y-%m-%d,%H:%M:%S`
-	temp=$(echo "$tmp > $maxTime"|bc)
+    temp=$(echo "$tmp > $maxTime"|bc)
     if [ $temp -eq  1 ]; then
         echo "seq: $i  time: $tmp  $datetime"
     fi
