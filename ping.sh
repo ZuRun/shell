@@ -9,12 +9,13 @@
 # 大于maxTime的才会打印出来
 addr=qq.com
 maxTime=100
+temp=0
 for((i=0;i<864000;i++))
 {
     tmp=$(ping $addr -c 1 | sed -n 's/.* = .*\/\(.*\)\/.*/\1/p')
     datetime=`date +%Y-%m-%d,%H:%M:%S`
-    #sum=$(echo "$tmp+$sum"|bc)
-    if [ $tmp>$maxTime ]; then
+	temp=$(echo "$tmp > $maxTime"|bc)
+    if [ $temp -eq  1 ]; then
         echo "seq: $i  time: $tmp  $datetime"
     fi
     sleep 1s
